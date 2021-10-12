@@ -1,3 +1,5 @@
+#include "read_file.hpp"
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -31,8 +33,8 @@ vector<State> ParseLine(string line) {
 
 string CellString(State cell) {
     switch(cell) {
-        case State::kObstacle: return "⛰️ ";
-        default: return "0 ";
+        case State::kObstacle: return " ⛰️ ";
+        default: return " 0 ";
     }
 }
 
@@ -74,6 +76,7 @@ vector<vector<State>> ReadBoardFile(string fpath){
     return ve;
     //PrintBoard(ve);
 }
+
 
 int main() {
     vector<vector<State>> board = ReadBoardFile("files/1.board");
